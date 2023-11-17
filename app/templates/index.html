@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translate</title>
+
+    <link rel="stylesheet" href="static/app.css">
+</head>
+
+<body>
+    <div class="title">
+        <h3>Português para Inglês</h3>
+    </div>
+    <form method="post" action="{{ url_for('index') }}">
+        <textarea required type="text" name="text" placeholder="Digite seu texto ou palavra a serem traduzidos..."></textarea>
+        <br><br>
+        <button type="submit">Translate</button>
+    </form>
+
+    {% if resultado %}
+
+    <div class="entrada">
+        <p>{{ texto|safe }}</p>
+    </div>
+
+    
+    <div class="copy">
+        <div>
+            <p>Aqui seu texto</h2>
+        </div>
+        <div>
+            <button onclick="copyResultadoToClipboard()" title="Copiar">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABBUlEQVR4nO2XQQqDMBQFcwmL9KLd9oxSlJ5mCi0Fi19t0vcTKX82utCYSUbBlISgYwJ65dxaibSVeT4eUIzRVOb9dMUYwDA7drpZZkxCMQbQzWTq7oxSJL3O28gAF6VIa5mrelf5lLHfGXSMitViJc9dGbTcgbOHyG5mWzd+i1KGnfmsyohFJnO1CsZK29csMxOL9L/KUMbg8e0/AbfSzChELqKQycFVpKYM3iK1ZKghUkOGWiLeMtQU8ZTBQyST8V9EOJxILiFiEDuiINIyiLQURFoGkZaCSMsg0lIQaRlEWgoiLYNIyyOt0l/lOYf41eVfRCQQIuXEjmwRaR01rRaESFryAMOIh1M9bjxUAAAAAElFTkSuQmCC">
+            </button>
+        </div>
+    </div>
+
+    <div class="saida">
+        <p id="resultado">{{ resultado }}</p>
+    </div>
+    {% endif %}
+
+<script src="static/app.js"></script>
+</body>
+
+</html>
