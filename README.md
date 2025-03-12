@@ -5,7 +5,7 @@ Um simples site usando Flask e DeepTranslator
 
 Simple translator using Flask
 
-git clone git@github.com:devmolozi/translator_flask.git
+git clone git@github.com:devfiorentin/translator_flask.git
 
 requirements:
 
